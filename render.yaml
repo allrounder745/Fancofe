@@ -1,0 +1,7 @@
+services:
+  - type: cron
+    name: fancode-live-json-updater
+    env: python
+    schedule: "@every 10m"
+    buildCommand: "pip install -r requirements.txt && playwright install"
+    startCommand: "python fancode_scraper.py"
